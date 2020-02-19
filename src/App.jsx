@@ -14,13 +14,14 @@ import {
 
 const App = () => {
 	const [trackerList, setTrackerList] = useState(
-		[...JSON.parse(window.localStorage.getItem('timeTrackers'))] || []
+		JSON.parse(window.localStorage.getItem('timeTrackers')) || []
 	)
 	const [trackerTurnedOnInfo, setTrackerTurnedOnInfo] = useState(() => {
 		const initialObject = {}
-		JSON.parse(window.localStorage.getItem('timeTrackers')).forEach(tracker => {
-			initialObject[tracker.id] = tracker.isTurnedOn
-		})
+		JSON.parse(window.localStorage.getItem('timeTrackers')) &&
+			JSON.parse(window.localStorage.getItem('timeTrackers')).forEach(tracker => {
+				initialObject[tracker.id] = tracker.isTurnedOn
+			})
 		return initialObject
 	})
 	const [inputValue, setInputValue] = useState('')

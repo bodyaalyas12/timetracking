@@ -1,18 +1,17 @@
-import React, { useState, useEffect } from 'react'
-import styled from 'styled-components'
-import playIcon from '../static/play_arrow-24px.svg'
-import pauseIcon from '../static/pause-24px.svg'
-import deleteIcon from '../static/delete-24px.svg'
-import { Row, ToggleButton } from './StyledComponents'
+import React from 'react'
 import { ReactSVG } from 'react-svg'
-import moment from 'moment'
+import styled from 'styled-components'
+import deleteIcon from '../static/delete-24px.svg'
+import pauseIcon from '../static/pause-24px.svg'
+import playIcon from '../static/play_arrow-24px.svg'
+import { Row, ToggleButton } from './StyledComponents'
 
 const TimeString = styled.span`
 	font-weight: 500;
 	padding: 0 16px;
 	font-size: 20px;
     transition: all 0.3s ease-in-out;
-    max-width:50%;
+    max-width:60%;
     @media (max-width: 575.98px) {
 		max-width:40%;
 	}

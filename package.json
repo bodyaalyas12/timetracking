@@ -6,7 +6,8 @@
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"start": "webpack-dev-server",
-		"build": "webpack"
+		"build": "webpack",
+		"deploy": "gh-pages -d dist"
 	},
 	"author": "bodyaalyas12",
 	"license": "ISC",
@@ -25,6 +26,7 @@
 	},
 	"dependencies": {
 		"file-loader": "^5.0.2",
+		"gh-pages": "^2.2.0",
 		"lodash": "^4.17.15",
 		"moment": "^2.24.0",
 		"react": "^16.12.0",
