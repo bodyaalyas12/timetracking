@@ -68,16 +68,16 @@ export const MainWrapper = styled.div`
 	display:flex;
 	align-items:center;
 	justify-content-center;
+	flex-direction:column;
 `
 
 export const Container = styled.div`
 	padding: 30px;
 	// max-width: 576px;
-    margin: auto;
-    width: 100%;
+	// margin: auto;
+	width: 100%;
 	@media (min-width: 0) {
-        width: 100%;
-       
+		width: 100%;
 	}
 	@media (min-width: 575.99px) {
 		width: 576px;
@@ -96,9 +96,9 @@ export const NewTrackerInput = styled.input`
 	border: 1px solid gray;
 	height: 40px;
 	width: 100%;
-	@media (max-width: 575.98px) {
-		max-width: 200px;
-	}
+	// @media (max-width: 575.98px) {
+	// 	max-width: 200px;
+	// }
 	padding: 0 20px;
 	font-size: 18px;
 `
@@ -117,4 +117,42 @@ export const NewTrackerButton = styled.div`
 	svg path:not([fill]) {
 		fill: #ffffff;
 	}
+`
+
+export const TimeString = styled.span`
+	font-weight: 500;
+	padding: 0 16px;
+	font-size: 20px;
+	transition: all 0.3s ease-in-out;
+
+	@media (max-width: 575.98px) {
+		max-width: 50%;
+	}
+	${({ ellipsis }) =>
+		ellipsis &&
+		` max-width:60%;white-space:nowrap;
+    overflow:hidden;
+	text-overflow:ellipsis;`}
+	${({ isTurnedOn }) => isTurnedOn && `color:#3faf6c !important;`}
+`
+export const DeleteButton = styled(ReactSVG)`
+	svg path:not([fill='none']) {
+		fill: #ec6365;
+	}
+	cursor: pointer;
+	& div {
+		height: 24px;
+	}
+`
+export const RowTrackerWrapper = styled(Row)`
+	border-top: 1px solid #d3d3d3;
+	&:last-child {
+		border-bottom: 1px solid #d3d3d3;
+	}
+	transition: all 0.3s ease-in-out;
+	${({ isTurnedOn }) => isTurnedOn && `background:#f0f0f0;`}
+`
+export const Logo = styled.h1`
+	padding-top:100px;
+	font-size:50px;
 `

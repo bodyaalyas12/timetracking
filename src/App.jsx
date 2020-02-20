@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from 'react'
-import SingleTracker from './SingleTracker'
-import playIcon from '../static/play_arrow-24px.svg'
 import moment from 'moment'
-
+import React, { useEffect, useState } from 'react'
+import playIcon from '../static/play_arrow-24px.svg'
+import SingleTracker from './SingleTracker'
 import {
+	Container,
+	MainWrapper,
+	NewTrackerButton,
+	NewTrackerInput,
 	Row,
 	ToggleButton,
-	MainWrapper,
-	Container,
-	NewTrackerInput,
-	NewTrackerButton
+	Logo
 } from './StyledComponents'
 
 const App = () => {
@@ -32,13 +32,11 @@ const App = () => {
 			moment(window.localStorage.getItem('closeMoment'))
 		if (closeMoment) {
 			const difference = moment().diff(closeMoment, 'seconds')
-			console.log(difference)
 			const newTrackerList = trackerList.map(tracker => ({
 				...tracker,
 				...(tracker.isTurnedOn && { trackerTime: tracker.trackerTime + difference })
 			}))
 			setTrackerList(newTrackerList)
-			console.log(trackerList)
 		}
 	}, [])
 
@@ -107,7 +105,8 @@ const App = () => {
 		})
 	}
 	return (
-		<MainWrapper>
+		<MainWrapper >
+			<Logo>Tracker</Logo>
 			<Container>
 				<Row width={100} p={[0, 30, 0, 30]} column>
 					<Row>

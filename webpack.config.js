@@ -1,4 +1,6 @@
 const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+
 module.exports = {
 	// define entry file and output
 	entry: './src/index.js',
@@ -32,5 +34,11 @@ module.exports = {
 	},
 	resolve: {
 		extensions: ['.js', '.jsx', '.es6', '.svg']
-	}
+	},
+	plugins: [
+		new HtmlWebpackPlugin({
+			title: 'Time tracker',
+			favicon: './static/baseline_alarm_black_18dp.png'
+		})
+	]
 }
